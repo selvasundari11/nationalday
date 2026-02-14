@@ -59,7 +59,8 @@ const Events = () => {
             {event.image && (
               <div className="event-image-container">
                 <img
-                  src={`http://localhost:8000${event.image}`}
+                  // src={`http://localhost:8000${event.image}`}
+src={`https://rithaniya.pythonanywhere.com${event.image}`}
                   alt={event.title}
                   className="event-image"
                   onError={(e) => {
