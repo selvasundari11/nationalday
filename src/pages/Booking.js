@@ -35,7 +35,9 @@ const Booking = () => {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:8000/api/book/", {
+      // const response = await axios.post("http://localhost:8000/api/book/", {
+      const response = await axios.post("https://rithaniya.pythonanywhere.com/api/book/", {
+
         event: event.id,
         event_title: event.title,
         full_name: formData.name, // ✅ CHANGED: name → full_name
