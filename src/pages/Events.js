@@ -10,7 +10,8 @@ const Events = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/events/")
+      // .get("http://localhost:8000/api/events/")
+      .get("https://rithaniya.pythonanywhere.com/api/events/")
       .then((response) => {
         console.log("✅ API Response:", response.data);
         setEvents(response.data);
