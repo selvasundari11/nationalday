@@ -24,7 +24,9 @@ const Contact = () => {
     setStatus("");
 
     try {
-      await axios.post("http://localhost:8000/api/contact/", formData);
+      // await axios.post("http://localhost:8000/api/contact/", formData);
+      await axios.post("https://rithaniya.pythonanywhere.com/api/contact/", formData);
+
       setStatus("✅ Thank you! Your message has been saved.");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
