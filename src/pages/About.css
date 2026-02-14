@@ -1,0 +1,60 @@
+/* 🔥 PREMIUM ABOUT PAGE - Kuwait National Day 2026 */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+.about-section {
+  padding: 100px 0;
+  /* ✅ YOUR ORIGINAL LAYOUT + KUWAIT FLAG COLORS ONLY */
+  background: linear-gradient(
+    135deg,
+    var(--green) 0%,
+    var(--white) 50%,
+    var(--orange) 100%
+  );
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.about-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h3 {
+  font-size: 2.5rem;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-stats {
+    flex-direction: column;
+  }
+}

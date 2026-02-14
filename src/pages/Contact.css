@@ -1,0 +1,365 @@
+/* 🔥 PREMIUM CONTACT PAGE - Kuwait National Day Theme (FIXED BOX SIZES) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+.contact-section {
+  min-height: 100vh;
+  padding: 120px 0;
+  background: linear-gradient(
+    135deg,
+    var(--green) 0%,
+    var(--white) 50%,
+    var(--orange) 100%
+  );
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1.5" fill="rgba(255,107,53,0.1)"/></svg>');
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  background: linear-gradient(45deg, var(--white), var(--orange), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 4rem;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from {
+    filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.6));
+  }
+  to {
+    filter: drop-shadow(0 0 40px rgba(0, 122, 61, 0.8));
+  }
+}
+
+/* ✅ FIXED: BOTH BOXES SAME SIZE */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: stretch; /* ✅ STRETCH TO SAME HEIGHT */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(25px);
+  padding: 3rem;
+  border-radius: 30px;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-height: 520px; /* ✅ SAME HEIGHT */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--green), var(--orange), var(--white));
+  background-size: 300% 100%;
+  animation: stripeMove 3s linear infinite;
+}
+
+@keyframes stripeMove {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 300% 0;
+  }
+}
+
+.contact-info:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 50px 100px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.contact-info h3 {
+  color: var(--green);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.contact-info h3::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green), var(--orange));
+  bottom: -10px;
+  left: 0;
+  border-radius: 2px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  font-size: 1.15rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  flex: 1; /* ✅ GROW TO FILL SPACE */
+}
+
+.contact-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(0, 122, 61, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.contact-item strong {
+  color: var(--orange);
+  font-size: 1.2rem;
+  min-width: 30px;
+}
+
+.social-links {
+  margin-top: auto; /* ✅ PUSH TO BOTTOM */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--light-black);
+  text-decoration: none;
+  padding: 1.2rem 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(248, 249, 250, 0.9)
+  );
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 53, 0.3) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  transition: all 0.6s ease;
+  transform: translate(-50%, -50%);
+}
+
+.social-link:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.social-link:hover {
+  transform: translateY(-5px) scale(1.02);
+  color: var(--green);
+  box-shadow: 0 20px 40px rgba(0, 122, 61, 0.2);
+  border-color: var(--green);
+}
+
+/* ✅ FORM ALSO SAME HEIGHT */
+.contact-form {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(25px);
+  padding: 3rem; /* ✅ SAME PADDING AS INFO */
+  border-radius: 30px;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-height: 520px; /* ✅ IDENTICAL HEIGHT */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.contact-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--orange), var(--green), var(--white));
+  background-size: 300% 100%;
+  animation: stripeMove 2s linear infinite reverse;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 18px;
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: var(--light-black);
+  flex: 1;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(26, 26, 26, 0.5);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow:
+    0 0 0 4px rgba(0, 122, 61, 0.15),
+    0 15px 40px rgba(0, 122, 61, 0.1);
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1.5rem 3rem;
+  background: linear-gradient(135deg, var(--green), var(--orange));
+  color: white;
+  border: none;
+  border-radius: 18px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 15px 40px rgba(0, 122, 61, 0.4);
+  margin-top: auto; /* ✅ PUSH TO BOTTOM */
+}
+
+.submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.7s;
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 30px 70px rgba(255, 107, 53, 0.6);
+}
+
+.submit-btn:active {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    min-height: 480px; /* ✅ Mobile same height */
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 80px 0;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 2.5rem 2rem;
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .social-links {
+    gap: 1rem;
+  }
+}
